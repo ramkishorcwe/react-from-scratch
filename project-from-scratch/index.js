@@ -39,3 +39,5 @@ const targetRootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(targetRootElement);
 root.render(element);
 // window.ReactDom.render(element, root);
+// window.ReactDom.render(element, root);
+// window.ReactDom.render(element, root);
