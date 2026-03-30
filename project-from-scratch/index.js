@@ -64,6 +64,36 @@ const deeplyNestedElement = React.createElement(
   React.createElement('h2', {}, 'Deeply Nested Heading'),
   React.createElement('p', {}, React.createElement('span', {}, 'This is a deeply nested paragraph.'))
 );
+console.log(deeplyNestedElement);
+/** results in the following output in the console:
+{
+  type: 'div',
+  props: {
+    children: [
+      {
+        type: 'h2',
+        props: {
+          children: 'Deeply Nested Heading'
+        }
+      },
+      {
+        type: 'p',
+        props: {
+          children: [
+            {
+              type: 'span',
+              props: {
+                children: 'This is a deeply nested paragraph.'
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+*/
+
 {/*
 results in the following HTML structure:
 <div>
@@ -92,4 +122,42 @@ results in the following HTML structure:
   </p>
 </div>
 */
-
+console.log(deeplyNestedElementWithButton);
+/** results in the following output in the console:
+{
+  type: 'div',
+  props: {
+    id: 'parent-div',
+    children: [
+      {
+        type: 'h2',
+        props: {
+          className: 'nested-heading',
+          children: 'Deeply Nested Heading'
+        }
+      },
+      {
+        type: 'p',
+        props: {
+          children: [
+            {
+              type: 'span',
+              props: {
+                children: [
+                  {
+                    type: 'button',
+                    props: {
+                      onclick: () => console.log('Button clicked!'),
+                      children: 'This is a deeply nested paragraph.'
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+*/
