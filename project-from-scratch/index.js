@@ -37,7 +37,7 @@ const element = React.createElement('h1', {}, 'Hello, World!');
 const targetRootElement = document.getElementById('root');
 // const root = ReactDom.createRoot(targetRootElement);
 const root = ReactDOM.createRoot(targetRootElement);
-root.render(element);
+root.render({});
 // window.ReactDom.render(element, root);
 // window.ReactDom.render(element, root);
 // window.ReactDom.render(element, root);
