@@ -74,3 +74,22 @@ results in the following HTML structure:
 </div>
 */}
 
+
+// created 4 lavels of nested button element and add onclick event to the button element and also added some attributes to the button element
+const deeplyNestedElementWithButton = React.createElement(
+  'div',
+  { id: 'parent-div' },
+  React.createElement('h2', { className: 'nested-heading' }, 'Deeply Nested Heading'),
+  React.createElement('p', {}, React.createElement('span', {}, React.createElement('button ', { onclick: () => console.log('Button clicked!') }, 'This is a deeply nested paragraph.'))))
+/*
+results in the following HTML structure:
+<div id="parent-div">
+  <h2 class="nested-heading">Deeply Nested Heading</h2>
+  <p>
+    <span>
+      <button onclick="console.log('Button clicked!')">This is a deeply nested paragraph.</button>
+    </span>
+  </p>
+</div>
+*/
+
