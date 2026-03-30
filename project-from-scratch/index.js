@@ -39,5 +39,38 @@ const targetRootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(targetRootElement);
 root.render({});
 // window.ReactDom.render(element, root);
-// window.ReactDom.render(element, root);
-// window.ReactDom.render(element, root);
+
+// create nested elements div is the parent element and h2 and p are the child elements of div
+//h2 and p are siblings
+const nestedElement = React.createElement(
+  'div',
+  null,
+  React.createElement('h2', {}, 'Nested Heading'),
+  React.createElement('p', {}, 'This is a nested paragraph.')
+);
+
+{/* 
+results in the following HTML structure:
+<div>
+  </h2>'Nested Heading'</h2>
+  <p>This is a nested paragraph.</p>
+</div> */}
+
+
+// created 4 lavels of nested elements
+const deeplyNestedElement = React.createElement(
+  'div',
+  null,
+  React.createElement('h2', {}, 'Deeply Nested Heading'),
+  React.createElement('p', {}, React.createElement('span', {}, 'This is a deeply nested paragraph.'))
+);
+{/*
+results in the following HTML structure:
+<div>
+  <h2>Deeply Nested Heading</h2>
+  <p>
+    <span>This is a deeply nested paragraph.</span>
+  </p>
+</div>
+*/}
+
